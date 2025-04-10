@@ -1,0 +1,35 @@
+{
+    "version": 2,
+    "framework": "laravel",
+    "functions": {
+        "api/index.php": {
+            "runtime": "vercel-php@0.6.0"
+        }
+    },
+    "routes": [
+        { "src": "/storage/certificates/(.*)", "dest": "/public/storage/certificates/$1" },
+        { "src": "/storage/profile/(.*)", "dest": "/public/storage/profile/$1" },
+        { "src": "/storage/projects/(.*)", "dest": "/public/storage/projects/$1" },
+        { "src": "/website/assets/pdf/(.*)", "dest": "/public/website/assets/pdf/$1" },
+        { "src": "/website/assets/script.js", "dest": "/public/website/assets/script.js" },
+        { "src": "/website/assets/style.css", "dest": "/public/website/assets/style.css" },
+        { "src": "/(css|js|images|fonts|favicon.ico)/(.*)", "dest": "/public/$1/$2" },
+        { "src": "/build/(.*)", "dest": "/public/build/$1" },
+        { "src": "/(.*)", "dest": "/api/index.php" }
+    ],
+    "env": {
+        "APP_ENV": "production",
+        "APP_DEBUG": "true",
+        "APP_URL": "https://portfolio-yudi.vercel.app",
+        "APP_CONFIG_CACHE": "/tmp/config.php",
+        "APP_EVENTS_CACHE": "/tmp/events.php",
+        "APP_PACKAGES_CACHE": "/tmp/packages.php",
+        "APP_ROUTES_CACHE": "/tmp/routes.php",
+        "APP_SERVICES_CACHE": "/tmp/services.php",
+        "VIEW_COMPILED_PATH": "/tmp",
+        "CACHE_DRIVER": "array",
+        "LOG_CHANNEL": "stderr",
+        "SESSION_DRIVER": "cookie"
+    },
+    "ouputDirectory": "public"
+}
